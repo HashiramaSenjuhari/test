@@ -1,0 +1,14 @@
+declare type CreateUserParams = {
+  clerkId:String,
+  email:String,
+  username:String,
+  firstName:String,
+  lastName:String,
+  photo:String
+}
+declare type UpdateUserParams = {
+  username:String,
+  firstName:String,
+  lastName:String,
+  photo:String
+}
