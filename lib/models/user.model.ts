@@ -19,17 +19,14 @@ const userSchema = new Schema({
   photo:{
     type:String,
     required:true,
-    unique:true
   },
   firstName:{
     type:String,
     required:true,
-    unique:true
   },
   lastName:{
     type:String,
     required:true,
-    unique:true
   },
   planId:{
     type:String,

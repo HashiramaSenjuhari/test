@@ -25,7 +25,7 @@ export async function getUserById(clerkId:String){
   }
 }
 
-export async function UpdateUser(clerkId:String,user:CreateUserParams){
+export async function updateUser(clerkId:String,user:CreateUserParams){
   try{
     await connectToDatabase()
     const updateUser = await User.findOneAndUpdate({clerkId},user,{new:true})
@@ -42,7 +42,7 @@ export async function deleteUser(clerkId:String){
     await connectToDatabase()
     const user = await User.findOne({clerkId})
     if(!user) throw new Error('User not found')
-    const deleteUser = await User.findByIdAndDelete(user)
+    const deleteUser = await User.findByIdAndDelete(user._id)
     return deleteUser?JSON.parse(JSON.stringify(deleteUser)):null
   }
   catch(error){
